@@ -1,5 +1,12 @@
-function integral = image_integral(imageVec)
-%assuming a square RGB image
-imDim = sqrt((size(imageVec, 1) / 3);
-im = reshape(imageVec, [imDim, imDim, 3]);
-grayed = im2gray(im);
+function integrals = image_integral(images, height, width)
+%assuming RGB image column vectors
+
+integrals = zeros(height, width, size(images, 2));
+for imNum = 1 : size(images, 2)
+    imageVec = images(:, imNum);
+    im = reshape(imageVec, [height, width, 3]);
+    grayed = im2gray(im);
+    integral = integralImage(grayed);
+    integrals(:, :, imNum) = integral(2:height+1, 2:width+1);
+end
+
