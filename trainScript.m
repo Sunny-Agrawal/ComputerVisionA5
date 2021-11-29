@@ -1,0 +1,23 @@
+function [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, cAll] = trainScript(wC1, wC2, wC3, wC4, wC5, wC6, wC7, wC8, wC9, wC10, integrals, labels, numIterations)
+
+c1 = adaTrain(wC1, integrals, labels, 0, numIterations);
+c2 = adaTrain(wC2, integrals, labels, 1, numIterations);
+c3 = adaTrain(wC3, integrals, labels, 2, numIterations);
+c4 = adaTrain(wC4, integrals, labels, 3, numIterations);
+c5 = adaTrain(wC5, integrals, labels, 4, numIterations);
+c6 = adaTrain(wC6, integrals, labels, 5, numIterations);
+c7 = adaTrain(wC7, integrals, labels, 6, numIterations);
+c8 = adaTrain(wC8, integrals, labels, 7, numIterations);
+c9 = adaTrain(wC9, integrals, labels, 8, numIterations);
+c10 = adaTrain(wC10, integrals, labels, 9, numIterations);
+cAll = zeros(size(c1, 1), size(c1, 2), 10);
+cAll(:, :, 1) = c1;
+cAll(:, :, 2) = c2;
+cAll(:, :, 3) = c3;
+cAll(:, :, 4) = c4;
+cAll(:, :, 5) = c5;
+cAll(:, :, 6) = c6;
+cAll(:, :, 7) = c7;
+cAll(:, :, 8) = c8;
+cAll(:, :, 9) = c9;
+cAll(:, :, 10) = c10;

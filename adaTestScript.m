@@ -7,6 +7,6 @@ for integralNum = 1 : numIntegrals
 end
 
 results(2, :) = labels == class;
-results(3, :) = results(1, :) == results(2, 1);
+results(3, :) = results(1, :) == results(2,:);
 
 acc = sum(results(3, :), 'all') / numIntegrals;
